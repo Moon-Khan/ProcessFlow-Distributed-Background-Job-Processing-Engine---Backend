@@ -30,7 +30,7 @@ Read `docs/PLAN.md` (full plan) and `docs/PROGRESS.md` (where we are) before doi
 - Tags (annotated): `pNN-before` (after PR 2/4 merged), `pNN-after` (after PR 4/4), `v0.N.0` on main + GitHub Release.
 - First commit on a new phase branch = `experiments/NN-name/README.md` (hypothesis), so the draft phase PR has a diff.
 - `gh` CLI 2.102 is installed (2026-10-17). The user must run `gh auth login` themselves (interactive browser login). If `gh auth status` fails, use the web UI.
-- Commit/push only when the user asks or the task clearly includes it.
+- **Never commit, push, open/merge PRs, tag or release until the user explicitly says so** (rule set 2026-10-17). Leave changes uncommitted in the working tree and tell the user what's ready to commit.
 
 ## Environment
 - Windows 11, Node 24.15, npm 11, git 2.39 (supports `--update-refs`), Docker 29.8 + Compose v5.5, k6 2.2, gh 2.102.

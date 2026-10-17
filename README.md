@@ -37,4 +37,4 @@ Node.js + TypeScript, Express, PostgreSQL + TypeORM, BullMQ + Redis, PDFKit, Nod
 - [Full learning plan](docs/PLAN.md) (also as [PDF](docs/ProcessFlow-Plan.pdf))
 - [Progress log](docs/PROGRESS.md)
 
-Frontend (React dashboard) lives in a separate repository.
+Frontend (React dashboard) lives in a separate repository: [ProcessFlow Frontend](https://github.com/Moon-Khan/ProcessFlow-Distributed-Background-Job-Processing-Engine---Frontend).

@@ -29,4 +29,5 @@ Update this file at the end of every working session: what's done, what's next, 
 ### 2026-10-17
 - Wrote the plan (`docs/PLAN.md` + PDF). Decisions: TypeORM, Express + TS, stacked PRs per phase, tags + releases, separate frontend repo.
 - Initial repo setup: README, CLAUDE.md, PR template, git config files. Pushed to `main`.
-- Pending manual GitHub settings (no `gh` CLI): see "GitHub settings" in `docs/SETUP.md`.
+- Frontend repo set up and pushed: https://github.com/Moon-Khan/ProcessFlow-Distributed-Background-Job-Processing-Engine---Frontend (README, CLAUDE.md, PR template, config files; no app code yet).
+- Pending manual GitHub settings for **both** repos (no `gh` CLI): see "GitHub settings" in `docs/SETUP.md`.

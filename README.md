@@ -53,6 +53,9 @@ npm run dev              # API on http://localhost:3000
 | `npm run migration:generate -- src/db/migrations/<Name>` | Generate a migration from entity changes |
 | `npm run migration:run` / `migration:revert` / `migration:show` | Apply / undo last / list migrations |
 | `npm run seed` | Wipe and regenerate synthetic users + claims (size from `SEED_USERS`, `SEED_CLAIMS`) |
+| `npm run loadtest:baseline` | Phase 0 baseline load test (API must be running) |
+
+`GET /metrics` returns event-loop delay, CPU %, memory, DB pool peaks and per-route timings since the previous call.
 
 ## Docs
 

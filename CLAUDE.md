@@ -14,6 +14,12 @@ Read `docs/PLAN.md` (full plan) and `docs/PROGRESS.md` (where we are) before doi
 - Pool via DataSource `poolSize` / `extra: { max, connectionTimeoutMillis, idleTimeoutMillis }`.
 - API and worker = separate processes/containers, same codebase (from Phase 4).
 - Seed size controlled by `SEED_CLAIMS` (default 100000), via SQL `generate_series`.
+- Postgres is on host port **5433** (5432 is taken by a local Postgres on the user's machine). MailHog: 1025 SMTP, 8025 UI.
+- Versions: TypeScript **7** (`module: nodenext`, CommonJS output, `.js` import suffixes), Express 5 (async errors handled natively), TypeORM **1.1**.
+- tsx/esbuild doesn't emit decorator metadata: always give TypeORM columns an explicit `type`. Use string entity targets in relations (`@ManyToOne('User', ...)`) with `import type` to avoid circular imports.
+- TypeORM CLI runs through tsx: `npm run typeorm -- <command>` (data source `src/db/data-source.ts`).
+- Benchmarks: run the build (`npm start`), not `npm run dev`. `/metrics` resets its window on each call.
+- On Windows Git Bash, `gh` and `k6` aren't on PATH in tool shells: prefix `export PATH="$PATH:/c/Program Files/GitHub CLI:/c/Program Files/k6"`.
 - PDF slowness must come from real CPU work (rows rendered), never `sleep()`.
 
 ## Git / GitHub workflow
@@ -24,7 +30,7 @@ Read `docs/PLAN.md` (full plan) and `docs/PROGRESS.md` (where we are) before doi
 - Tags (annotated): `pNN-before` (after PR 2/4 merged), `pNN-after` (after PR 4/4), `v0.N.0` on main + GitHub Release.
 - First commit on a new phase branch = `experiments/NN-name/README.md` (hypothesis), so the draft phase PR has a diff.
 - `gh` CLI 2.102 is installed (2026-10-17). The user must run `gh auth login` themselves (interactive browser login). If `gh auth status` fails, use the web UI.
-- Commit/push only when the user asks or the task clearly includes it.
+- **Never commit, push, open/merge PRs, tag or release until the user explicitly says so** (rule set 2026-10-17). Leave changes uncommitted in the working tree and tell the user what's ready to commit.
 
 ## Environment
 - Windows 11, Node 24.15, npm 11, git 2.39 (supports `--update-refs`), Docker 29.8 + Compose v5.5, k6 2.2, gh 2.102.

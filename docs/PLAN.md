@@ -12,7 +12,8 @@
 2. **No tool before a measurement proves you need it.** Redis, BullMQ, pools, caches and rate limiters only appear after a test shows the problem.
 3. **Same test before and after.** Each experiment script is committed once and re-run unchanged after the fix.
 4. **Record real numbers only.** Write down your machine specs and the real results, including the ones that surprise you.
-5. **Timebox.** If a phase takes more than 1.5 days, cut scope and move on.
+5. **You own every git action.** Claude writes and tests code but never commits, pushes, opens or merges PRs, or creates tags/releases until you explicitly say so.
+6. **Timebox.** If a phase takes more than 1.5 days, cut scope and move on.
 
 ---
 

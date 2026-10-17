@@ -15,4 +15,9 @@ Paginated reads (`GET /claims`) will be slower but stable, because they are smal
 4. `p00-4-metrics`: request timing middleware, `/metrics` (event-loop lag, memory, counts), baseline load test
 
 ## How to run
-See `run.sh` (added in PR 4/4). Results go in `before.md`.
+```bash
+npm run db:up && npm run migration:run && npm run seed
+npm run build && npm start          # terminal 1 (use the build, not `npm run dev`, for benchmarks)
+npm run loadtest:baseline           # terminal 2  (override with C=100 D=30 ...)
+```
+Results: [`before.md`](before.md). `GET /metrics` returns event-loop delay, CPU %, memory, DB pool peaks and per-route timings since the last call.

@@ -32,6 +32,26 @@ Every number published here is measured. See `experiments/` and the GitHub Relea
 
 Node.js + TypeScript, Express, PostgreSQL + TypeORM, BullMQ + Redis, PDFKit, Nodemailer + MailHog, k6 / autocannon, Docker Compose.
 
+## Getting started
+
+Requires Node 24+ and Docker Desktop (running).
+
+```bash
+npm ci
+cp .env.example .env
+npm run db:up            # Postgres on localhost:5433, MailHog on :1025 (UI: http://localhost:8025)
+npm run migration:run
+npm run dev              # API on http://localhost:3000
+```
+
+| Script | What it does |
+|---|---|
+| `npm run dev` | API with hot reload (tsx) |
+| `npm run build` / `npm start` | Compile to `dist/` and run it |
+| `npm run db:up` / `db:down` / `db:reset` | Start / stop / wipe and re-migrate the local DB |
+| `npm run migration:generate -- src/db/migrations/<Name>` | Generate a migration from entity changes |
+| `npm run migration:run` / `migration:revert` / `migration:show` | Apply / undo last / list migrations |
+
 ## Docs
 
 - [Full learning plan](docs/PLAN.md) (also as [PDF](docs/ProcessFlow-Plan.pdf))

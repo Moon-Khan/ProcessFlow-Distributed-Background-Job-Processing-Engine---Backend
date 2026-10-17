@@ -30,4 +30,5 @@ Update this file at the end of every working session: what's done, what's next, 
 - Wrote the plan (`docs/PLAN.md` + PDF). Decisions: TypeORM, Express + TS, stacked PRs per phase, tags + releases, separate frontend repo.
 - Initial repo setup: README, CLAUDE.md, PR template, git config files. Pushed to `main`.
 - Frontend repo set up and pushed: https://github.com/Moon-Khan/ProcessFlow-Distributed-Background-Job-Processing-Engine---Frontend (README, CLAUDE.md, PR template, config files; no app code yet).
+- Installed local tools: gh 2.102, k6 2.2 (Docker 29.8 + Node 24 already present). Pulled postgres/redis/mailhog images. Still to do by the user: `gh auth login`.
 - Pending manual GitHub settings for **both** repos (no `gh` CLI): see "GitHub settings" in `docs/SETUP.md`.

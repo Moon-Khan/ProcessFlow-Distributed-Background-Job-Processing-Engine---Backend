@@ -23,9 +23,11 @@ Read `docs/PLAN.md` (full plan) and `docs/PROGRESS.md` (where we are) before doi
 - Branch names use `-` not `/` (`p01` and `p01/x` can't coexist).
 - Tags (annotated): `pNN-before` (after PR 2/4 merged), `pNN-after` (after PR 4/4), `v0.N.0` on main + GitHub Release.
 - First commit on a new phase branch = `experiments/NN-name/README.md` (hypothesis), so the draft phase PR has a diff.
-- The `gh` CLI is **not installed** on the user's machine (as of 2026-10-17). Use the web UI or ask the user to install it (`winget install GitHub.cli`).
+- `gh` CLI 2.102 is installed (2026-10-17). The user must run `gh auth login` themselves (interactive browser login). If `gh auth status` fails, use the web UI.
 - Commit/push only when the user asks or the task clearly includes it.
 
 ## Environment
-- Windows 11, Node 24, git 2.39 (supports `--update-refs`). Docker Desktop is required.
+- Windows 11, Node 24.15, npm 11, git 2.39 (supports `--update-refs`), Docker 29.8 + Compose v5.5, k6 2.2, gh 2.102.
+- Images pulled: `postgres:17-alpine`, `redis:7-alpine`, `mailhog/mailhog:latest`.
+- Express/TypeScript etc. are npm deps installed inside the repo in Phase 0 PR 1 (`p00-1-scaffold`), not globally.
 - Workspace: `D:\study\project\Doc- Processer\` contains `backend/` (this repo) and `frontend/` (separate repo).

@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "target": "ES2023",
-    "lib": ["ES2023"],
+    "lib": [
+      "ES2023"
+    ],
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "rootDir": "src",
@@ -12,7 +14,12 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "sourceMap": true,
-    "types": ["node"]
+    "types": [
+      "node"
+    ],
+    "experimentalDecorators": true
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

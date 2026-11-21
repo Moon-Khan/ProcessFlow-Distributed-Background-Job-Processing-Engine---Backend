@@ -59,7 +59,6 @@ npm run dev              # API on http://localhost:3000
 
 ## Docs
 
-- [Full learning plan](docs/PLAN.md) (also as [PDF](docs/ProcessFlow-Plan.pdf))
-- [Progress log](docs/PROGRESS.md)
+- The learning plan, progress log and setup notes are kept outside this repo (in the local workspace `docs/` folder), so they are not published here.
 
 Frontend (React dashboard) lives in a separate repository: [ProcessFlow Frontend](https://github.com/Moon-Khan/ProcessFlow-Distributed-Background-Job-Processing-Engine---Frontend).

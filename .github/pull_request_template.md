@@ -1,6 +1,6 @@
-<!-- Title format: [P<phase> <n>/<total>] short description   e.g. [P1 2/4] Load test + baseline numbers -->
+<!-- Title format: Phase <N>: short description   e.g. Phase 1: Synchronous reports -->
 
-**Stack:** Phase <!-- N -->, PR <!-- n/total -->. Base: `<!-- branch below -->`
+**Phase:** <!-- N -->
 
 ## Problem
 <!-- What breaks, or what is missing? Link the experiment if any. -->

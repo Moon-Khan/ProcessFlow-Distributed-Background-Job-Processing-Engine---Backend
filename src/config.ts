@@ -15,6 +15,15 @@ export const config = {
   port: num('PORT', 3000),
   // Off by default: console.log under heavy load is itself a bottleneck.
   logRequests: str('LOG_REQUESTS', 'false') === 'true',
+  // Where generated PDFs are written, relative to the working directory. Git-ignored.
+  reportsDir: str('REPORTS_DIR', 'reports'),
+  email: {
+    // An IP, not "localhost": Nodemailer resolves hostnames through DNS (not the hosts file),
+    // and a slow or offline DNS server then fails every email.
+    smtpHost: str('SMTP_HOST', '127.0.0.1'),
+    smtpPort: num('SMTP_PORT', 1025),
+    from: str('EMAIL_FROM', 'ProcessFlow Reports <reports@securelife.test>'),
+  },
   db: {
     host: str('DB_HOST', 'localhost'),
     port: num('DB_PORT', 5433),

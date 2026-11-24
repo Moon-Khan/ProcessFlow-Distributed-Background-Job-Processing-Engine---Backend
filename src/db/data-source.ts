@@ -3,6 +3,7 @@ import path from 'node:path';
 import { DataSource } from 'typeorm';
 import { config } from '../config.js';
 import { Claim } from './entities/Claim.js';
+import { Report } from './entities/Report.js';
 import { User } from './entities/User.js';
 
 // Used by the app and by the TypeORM CLI (`npm run migration:*`).
@@ -13,7 +14,7 @@ export const AppDataSource = new DataSource({
   username: config.db.user,
   password: config.db.password,
   database: config.db.name,
-  entities: [User, Claim],
+  entities: [User, Claim, Report],
   // .ts when run through tsx, .js after `npm run build`
   migrations: [path.join(__dirname, 'migrations', '*.{ts,js}')],
   // Never let TypeORM change the schema by itself: every change is a reviewed migration.

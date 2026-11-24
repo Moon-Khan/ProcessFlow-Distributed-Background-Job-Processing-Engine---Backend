@@ -13,6 +13,8 @@ function str(name: string, fallback: string): string {
 
 export const config = {
   port: num('PORT', 3000),
+  // Off by default: console.log under heavy load is itself a bottleneck.
+  logRequests: str('LOG_REQUESTS', 'false') === 'true',
   db: {
     host: str('DB_HOST', 'localhost'),
     port: num('DB_PORT', 5433),

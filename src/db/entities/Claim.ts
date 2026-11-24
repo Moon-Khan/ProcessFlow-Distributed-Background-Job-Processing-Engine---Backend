@@ -1,17 +1,7 @@
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import type { ClaimStatus, Department } from '../../types/index.js';
+import { numericToNumber } from '../transformers/numeric.transformer.js';
 import type { User } from './User.js';
-
-export const CLAIM_STATUSES = ['approved', 'rejected', 'pending'] as const;
-export type ClaimStatus = (typeof CLAIM_STATUSES)[number];
-
-export const DEPARTMENTS = ['health', 'auto', 'home', 'life', 'travel'] as const;
-export type Department = (typeof DEPARTMENTS)[number];
-
-// Postgres returns NUMERIC as a string to avoid precision loss; convert for convenience.
-const numericToNumber = {
-  to: (value: number) => value,
-  from: (value: string | null) => (value === null ? null : Number(value)),
-};
 
 // No index on department/status on purpose: Phase 2 measures the full scan first.
 @Entity({ name: 'claims' })

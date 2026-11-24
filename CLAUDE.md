@@ -27,7 +27,7 @@ Read `../docs/PLAN.md` (full plan) and `../docs/PROGRESS.md` (where we are; work
 - `main` gets finished phases only, through the **phase PR** (`pNN` -> `main`, **merge commit**).
 - Each phase = **one branch `pNN` + one phase PR** (stacked PRs dropped 2026-11-21). Keep separate commits per loop step: naive -> measure (`before.md`) -> fix -> results (`after.md`, `notes.md`). Only stack PRs if the user asks for it.
 - Branch names use `-` not `/` (`p01` and `p01/x` can't coexist).
-- Tags (annotated): `pNN-before` (on the commit adding `before.md`), `pNN-after` (on the commit adding `after.md`), `v0.N.0` on main + GitHub Release.
+- Tags/releases are **on hold** (user decision 2026-11-21): don't create any unless asked. If added later: annotated `pNN-before` (on the commit adding `before.md`), `pNN-after` (on the commit adding `after.md`), `v0.N.0` on main + GitHub Release.
 - First commit on a new phase branch = `experiments/NN-name/README.md` (hypothesis).
 - Learning split (from Phase 1): Claude explains the problem, builds the naive version and the measurement; **the user writes the core fix**, Claude reviews. Ask the user for a written prediction before each experiment.
 - `gh` CLI 2.102 is installed (2026-10-17). The user must run `gh auth login` themselves (interactive browser login). If `gh auth status` fails, use the web UI.
